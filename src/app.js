@@ -9,11 +9,18 @@ import roomConfigurationRoute from "./route/route.roomConfiguration.js";
 import planNameRouter from "./route/route.planName.js";
 import morgan from "morgan";
 import projectDetailRoute from "./route/route.projectDetail.js";
+import cors from 'cors'
 
 const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
+
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    credentials: true
+}));
+
 
 app.use('/api/project',projectRouter);
 app.use('/api/payment-plan',paymentPlanRoute);
