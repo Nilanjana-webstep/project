@@ -22,14 +22,14 @@ export const fetchProjectDetailForParticularProject = async ( req,res,next)=>{
         })
 
      } catch (error) {
+
+        console.log('error :',error);
         
      }
 }
 
 
 export const fetchAllProjectDetail = async ( req,res,next)=>{
-    
-   console.log("got hit");
    
 
     try {
@@ -44,6 +44,8 @@ export const fetchAllProjectDetail = async ( req,res,next)=>{
         })
 
      } catch (error) {
+        
+        console.log("error : ",error);
         
      }
 }
