@@ -27,15 +27,43 @@ export const fetchProjectDetailForParticularProject = async ( req,res,next)=>{
 }
 
 
+export const fetchAllProjectDetail = async ( req,res,next)=>{
+    
+   console.log("got hit");
+   
+
+    try {
+        
+      
+        const data = await ProjectDetail.findAll( {attributes: { exclude: ['updatedAt','createdAt'] }});
+        
+        res.status(200).json({
+            success : true,
+            message : 'successfully fetched all project detail ',
+            data
+        })
+
+     } catch (error) {
+        
+     }
+}
+
+
 
 
 export const updateProjectDetail = async ( req,res,next)=>{
     
     const { projectId } = req.params;
 
+    console.log("proejct id : ",projectId);
+    
+
     try {
         
          const [ result ] = await ProjectDetail.update(req.body,{where:{projectId}});
+
+         console.log("the result is : ",result);
+         
 
          if( result == 1){
 

@@ -1,19 +1,24 @@
 import Joi from "joi";
 
 const projectDetailSchema = Joi.object({
-    room: Joi.number()
+    room: Joi.string()
     .min(1)
     .max(100000)
     .required(),
 
-  floor: Joi.number()
+  floor: Joi.string()
     .min(1)
-    .max(10000)
+    .max(100)
     .required(),
 
-  areaDetail: Joi.number()
+  areaDetail: Joi.string()
     .min(1)
-    .max(10000000000000000000)
+    .max(100)
+    .required(),
+
+  unit: Joi.string()
+    .min(1)
+    .max(10)
     .required(),
 
   cost: Joi.number()

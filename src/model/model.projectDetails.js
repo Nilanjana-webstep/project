@@ -9,15 +9,19 @@ const ProjectDetail = sequelize.define(
         primaryKey: true,
       },
       room: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       floor: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       areaDetail : {
-        type : DataTypes.INTEGER,
+        type : DataTypes.STRING,
+        allowNull: false,
+      },
+      unit : {
+        type : DataTypes.STRING,
         allowNull: false,
       },
       cost : {

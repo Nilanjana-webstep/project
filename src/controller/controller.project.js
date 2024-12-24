@@ -159,6 +159,7 @@ const updateproject = async(req,res,next)=>{
 const fetchProjectByProjectId = async(req,res,next)=>{
 
     const { projectId } = req.params;
+    
 
     try {
 
@@ -224,11 +225,42 @@ const deleteProjectByProjectId = async (req, res, next) => {
     }
 };
 
+
+const getAllProject = async(req,res,next)=>{
+    
+    try {
+
+        
+        const data = await Project.findAll({
+            include: [{
+              model: Address,
+              attributes: { exclude: ['createdAt', 'updatedAt'] }
+            }],
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+          });
+          
+          
+        
+
+        return res.status(200).json({
+            success : true,
+            message : "all projects fetched successfully",
+            data
+        })
+
+    } catch (error) {
+
+        console.log("the error is : ",error);
+        
+    }
+}
+
 export {
     createProject,
     updateproject,
     fetchProjectByProjectId,
-    deleteProjectByProjectId
+    deleteProjectByProjectId,
+    getAllProject
 }
 
 
