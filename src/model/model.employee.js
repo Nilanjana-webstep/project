@@ -13,12 +13,13 @@ const Employee = sequelize.define(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      solution : {
+      salutation : {
         type:DataTypes.STRING,
         allowNull : false
       },
       email : {
         type : DataTypes.STRING,
+        allowNull : false
       },
       workPhone : {
         type : DataTypes.INTEGER,
@@ -28,8 +29,8 @@ const Employee = sequelize.define(
         type : DataTypes.INTEGER,
         allowNull : false
       },
-      communicationChannel : {
-        type : DataTypes.STRING,
+      active : {
+        type : DataTypes.BOOLEAN,
         allowNull : false
       },
       projectId : {
