@@ -10,7 +10,6 @@ import { projectDetailSchema } from "../../validation/project/validation.project
 import { roomConfigurationSchema } from "../../validation/project/validation.roomConfiguration.js";
 
 export const projectCreationValidation=async(req,res,next)=>{
-
    
     const { project ,  address,  roomConfiguration, projectDetail , amenity , planName , siteEmployee } = req.body;
 

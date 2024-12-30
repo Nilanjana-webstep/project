@@ -9,12 +9,13 @@ const employeeSchema = Joi.object({
         .min(2)
         .max(50)
         .required(),
-    solution: Joi.string()
+    salutation: Joi.string()
         .min(2)
         .max(100)
         .required(),
     email: Joi.string()
-        .email(),
+        .email()
+        .required(),
     workPhone: Joi.string()
         .min(10)
         .max(15)
@@ -23,9 +24,8 @@ const employeeSchema = Joi.object({
         .min(10)
         .max(15)
         .required(),
-    communicationChannel: Joi.string()
-        .valid('email', 'phone', 'sms')
-        .required()
+    active: Joi.boolean()
+        
 });
 
 export { employeeSchema };

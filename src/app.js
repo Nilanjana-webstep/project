@@ -21,7 +21,6 @@ app.use(cors({
     credentials: true
 }));
 
-
 app.use('/api/project',projectRouter);
 app.use('/api/payment-plan',paymentPlanRoute);
 app.use('/api/address',addressRoute);

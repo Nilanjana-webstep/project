@@ -14,6 +14,7 @@ import CustomError from "../utils/CustomError.js"
 
 //creating a project
 const createProject = async (req,res,next)=>{
+    
   
     const { project ,  address,  roomConfiguration, projectDetail , amenity , planName , siteEmployee } = req.body;
       
